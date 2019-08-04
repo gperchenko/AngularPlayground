@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router"
+
+import { RelationshipType } from '@app/shared/models';
+import { RelationshipTypeService } from '@app/components/admin/relationship-type.service';
 
 @Component({
   selector: 'app-relationship-type',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelationshipTypeComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['id', 'name'];
+  relationshipTypes: RelationshipType [];
+
+  constructor(
+    private router: Router,
+    private relationshipTypeService: RelationshipTypeService
+    ) { }
 
   ngOnInit() {
+    this.relationshipTypes = this.relationshipTypeService.getAll();
   }
-
+  
+  getRecord(type: RelationshipType)
+  {
+    this.router.navigate(['admin/roles', type.id])
+  }
 }

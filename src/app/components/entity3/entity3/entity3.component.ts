@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Entity } from '@app/shared/models';
+import { Entity3Service } from '@app/components/entity3/entity3.service';
+
 @Component({
   selector: 'app-entity3',
   templateUrl: './entity3.component.html',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Entity3Component implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['id', 'name'];
+  entities: Entity[];
+  entityName: string;
+
+  constructor(
+    private entity3Service: Entity3Service
+  ) { }
 
   ngOnInit() {
+    this.entities = this.entity3Service.getAll();
   }
+
+  addEntity() {
+    let newEntity = new Entity;
+    newEntity.name = this.entityName;
+    this.entity3Service.addEntity(newEntity);
+    this.entities = this.entity3Service.getAll();
+   }
+
 
 }
