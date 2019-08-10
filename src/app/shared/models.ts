@@ -11,6 +11,8 @@ export class Entity {
   export class RelationshipType {
     id: number;
     name: string;
+    parentName: string;
+    childName: string;
   }
   
   export class Role {

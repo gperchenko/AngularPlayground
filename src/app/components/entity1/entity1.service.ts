@@ -7,7 +7,8 @@ import { Entity } from '@app/shared/models';
 })
 export class Entity1Service {
 
-  private entities: Entity[] = []
+  private entities: Entity[] = [];
+  private entityTypeName: string = "E1";
 
   constructor() { }
 
@@ -22,5 +23,9 @@ export class Entity1Service {
 
   getById(id: number): Entity {
     return this.entities.find(r => r.id == id);
+  }
+
+  getEntityTypeName() : string {
+    return this.entityTypeName;
   }
 }
