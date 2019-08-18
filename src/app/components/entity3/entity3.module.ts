@@ -1,15 +1,17 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '../../shared/material.module';
+import { SharedModule } from '@app/shared/shared.module';
 
 import { Entity3Component } from './entity3/entity3.component';
 import { Entity3DetailsComponent } from './entity3-details/entity3-details.component';
 import { Entity3Service } from './entity3.service';
 
 const routes: Routes = [
-  { path: 'entity3/entityDetails', component: Entity3DetailsComponent }
+  { path: 'entity3/entityDetails/:id', component: Entity3DetailsComponent }
 ];
 
 
@@ -17,7 +19,9 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     MaterialModule,
-    FormsModule
+    FormsModule,
+    BrowserModule,
+    SharedModule
   ],
   declarations: [
     Entity3Component,

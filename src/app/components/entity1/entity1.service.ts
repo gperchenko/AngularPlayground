@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 
+import { IEntityService } from '@app/components/interfaces/ientity-service';
 import { Entity } from '@app/shared/models';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Entity1Service {
+export class Entity1Service implements IEntityService {
 
   private entities: Entity[] = [];
   private entityTypeName: string = "E1";
 
-  constructor() { }
+  constructor() {}
 
   getAll(): Entity [] {
     return this.entities.filter(e => true);

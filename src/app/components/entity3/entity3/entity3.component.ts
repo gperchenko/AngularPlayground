@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router"
 
 import { Entity } from '@app/shared/models';
 import { Entity3Service } from '@app/components/entity3/entity3.service';
@@ -15,6 +16,7 @@ export class Entity3Component implements OnInit {
   entityName: string;
 
   constructor(
+    private router: Router,
     private entity3Service: Entity3Service
   ) { }
 
@@ -29,5 +31,8 @@ export class Entity3Component implements OnInit {
     this.entities = this.entity3Service.getAll();
    }
 
-
+   GoToEntityDetails(entity: Entity)
+   {
+     this.router.navigate(['entity3/entityDetails', entity.id])
+   }
 }

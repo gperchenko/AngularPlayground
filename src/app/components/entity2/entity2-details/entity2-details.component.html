@@ -1,1 +1,5 @@
-<a routerLink="/entity2" >Back to Entity List</a>
+<h3>Entity: {{entity.name}}</h3>
+
+<div class="relationship-container"  *ngFor="let type of relationshipTypes">
+    <app-relationships></app-relationships>
+</div>

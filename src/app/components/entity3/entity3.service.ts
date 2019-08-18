@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 
+import { IEntityService } from '@app/components/interfaces/ientity-service';
 import { Entity } from '@app/shared/models';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Entity3Service {
+export class Entity3Service implements IEntityService {
 
   private entities: Entity[] = []
+  private entityTypeName: string = "E1";
 
-  constructor() { }
+  constructor() {}
 
   getAll(): Entity [] {
     return this.entities.filter(e => true);
@@ -22,5 +24,9 @@ export class Entity3Service {
 
   getById(id: number): Entity {
     return this.entities.find(r => r.id == id);
+  }
+
+  getEntityTypeName() : string {
+    return this.entityTypeName;
   }
 }

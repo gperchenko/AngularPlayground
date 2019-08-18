@@ -9,6 +9,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 500px;
   }
 
-  .mat-row:hover {
-    background-color: darkgrey;
-  }
+.mat-row:hover {
+  background-color: darkgrey;
+}
+
+.relationship-container {
+  padding-bottom: 10px;
+}
