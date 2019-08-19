@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { MaterialModule } from '../../shared/material.module';
+import { MaterialModule } from '@app/shared/material.module';
 import { SharedModule } from '@app/shared/shared.module';
 
 import { Entity2Component } from './entity2/entity2.component';

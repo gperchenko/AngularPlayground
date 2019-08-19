@@ -1,5 +1,5 @@
 <h3>Entity: {{entity.name}}</h3>
 
 <div class="relationship-container"  *ngFor="let type of relationshipTypes">
-    <app-relationships></app-relationships>
+    <app-relationships [entity]="entity"></app-relationships>
 </div>
