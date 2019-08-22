@@ -10,6 +10,8 @@ import { RelationshipTypeService } from '@app/components/admin/relationship-type
 import { RoleService } from '@app/components/admin/role.service';
 import { RelationshipService } from '@app/shared/relationship.service';
 
+import { Entity, RelationshipType, Relationship } from '@app/shared/models';
+
 import { AddNewRelationshipComponent } from '@app/shared/components/add-new-relationship/add-new-relationship.component';
 import { from } from 'rxjs';
 
@@ -19,8 +21,12 @@ import { from } from 'rxjs';
   styleUrls: ['./relationships.component.css']
 })
 export class RelationshipsComponent implements OnInit {
-  @Input() entity: string;
-  entityServiceMap: { [key: string]: IEntityService} = {};
+  @Input() entity: Entity;
+  @Input() relationshipType: RelationshipType;
+  @Input() entityTypeName: string;
+  private entityServiceMap: { [key: string]: IEntityService} = {};
+  private displayedColumns: string[] = ['id', 'parent', 'child', 'role', 'startDate'];
+  private relationships: Relationship[];
   
   constructor(
     public dialog: MatDialog,

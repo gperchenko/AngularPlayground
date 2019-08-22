@@ -8,12 +8,8 @@ import { Role } from '@app/shared/models';
 export class RoleService {
 
   private roles: Role [] = [
-    { id: 1, relationshipTypeId: 1,  name: 'role11' },
-    { id: 2, relationshipTypeId: 1,  name: 'role12' },
-    { id: 3, relationshipTypeId: 2,  name: 'role21' },
-    { id: 4, relationshipTypeId: 2,  name: 'role22' },
-    { id: 5, relationshipTypeId: 3,  name: 'role31' },
-    { id: 6, relationshipTypeId: 3,  name: 'role32' }
+    { id: 1, relationshipTypeId: 1,  name: 'Founder' },
+    { id: 2, relationshipTypeId: 1,  name: 'Competitor' }
   ];
 
   constructor() { }

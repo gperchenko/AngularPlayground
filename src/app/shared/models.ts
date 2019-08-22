@@ -5,7 +5,14 @@ export class Entity {
 
   export class Relationship {
     id: number;
-    name: string;
+    relationshipTypeId: number;
+    parentId: number;
+    parent: Entity;
+    childId: number;
+    child: Entity;
+    startDate: string;
+    roleId: number;
+    role: Role;
   }
 
   export class RelationshipType {
@@ -20,6 +27,3 @@ export class Entity {
     relationshipTypeId: number;
     name: string;
   }
-
-
-

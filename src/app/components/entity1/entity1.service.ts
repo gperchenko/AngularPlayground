@@ -8,7 +8,10 @@ import { Entity } from '@app/shared/models';
 })
 export class Entity1Service implements IEntityService {
 
-  private entities: Entity[] = [];
+  private entities: Entity[] = [
+    {id: 1, name: "Bill Gates"},
+    {id: 2, name: "Steve Jobs"}
+  ];
   private entityTypeName: string = "E1";
 
   constructor() {}
